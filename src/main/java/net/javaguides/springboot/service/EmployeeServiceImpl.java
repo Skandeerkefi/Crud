@@ -41,7 +41,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     public EmployeeDTO updateEmployee(Long id, EmployeeDTO employeeDTO) {
         Employee existingEmployee = employeeRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Employee not found with id: " + id));
-
         // Update the existing employee's properties based on the DTO
         // Assuming your EmployeeDTO contains fields like firstName, lastName, and emailId
         existingEmployee.setFirstName(employeeDTO.getFirstName());
