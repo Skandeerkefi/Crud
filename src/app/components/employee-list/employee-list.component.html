@@ -1,4 +1,11 @@
+<!-- employee-list.component.html -->
 <h2>Employee List</h2>
+
+<!-- Add a "Create" button -->
+<button (click)="createEmployee()" class="btn btn-success">
+  Create Employee
+</button>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -17,11 +24,21 @@
         <button (click)="updateEmployee(employee.id)" class="btn btn-info">
           Update
         </button>
-        <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger" style="margin-left:10px"> Delete</button>
-      <button (click) = "employeeDetails(employee.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+        <button
+          (click)="deleteEmployee(employee.id)"
+          class="btn btn-danger"
+          style="margin-left: 10px"
+        >
+          Delete
+        </button>
+        <button
+          (click)="employeeDetails(employee.id)"
+          class="btn btn-info"
+          style="margin-left: 10px"
+        >
+          View
+        </button>
       </td>
-
-
     </tr>
   </tbody>
 </table>

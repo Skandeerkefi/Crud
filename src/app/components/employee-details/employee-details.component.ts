@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../employee';
+import { Employee } from '../../services/employee';
 import { ActivatedRoute } from '@angular/router';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'app-employee-details',
@@ -18,6 +18,7 @@ export class EmployeeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    console.log(this.employee); // Check if the data is available here
 
     // Remove this line: this.employee = new Employee();
 

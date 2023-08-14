@@ -1,0 +1,24 @@
+<div class="col-md-6 offset-md-3">
+  <h3>{{ id ? 'Update' : 'Create' }} Employee</h3>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" formControlName="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" formControlName="lastName">
+    </div>
+    
+
+    <div class="form-group">
+      <label for="emailId">Email Id</label>
+      <input type="text" class="form-control" id="emailId" formControlName="emailId">
+    </div>
+
+    <button class="btn btn-success" type="submit">Submit</button>
+
+  </form>
+</div>
