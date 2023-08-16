@@ -1,0 +1,54 @@
+.filters-container {
+  margin-bottom: 20px;
+}
+
+.filters-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-input label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.filter-input input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.filter-input input:focus {
+  border-color: #3498db;
+}
+/* Add these styles to your existing CSS or SCSS file */
+
+.sort-arrow {
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 4px;
+}
+
+.up-arrow::before {
+  content: '\25B2'; /* Upwards triangle character */
+  font-size: 10px;
+}
+
+.down-arrow::before {
+  content: '\25BC'; /* Downwards triangle character */
+  font-size: 10px;
+}
+

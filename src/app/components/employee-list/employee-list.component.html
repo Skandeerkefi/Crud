@@ -1,22 +1,57 @@
-<!-- employee-list.component.html -->
 <h2>Employee List</h2>
 
-<!-- Add a "Create" button -->
 <button (click)="createEmployee()" class="btn btn-success">
   Create Employee
 </button>
 
+<div class="filters-container">
+  <form [formGroup]="filterForm" class="filters-form">
+    <div class="filter-input">
+      <label for="firstName">Search by First Name:</label>
+      <input
+        type="text"
+        formControlName="firstName"
+        id="firstName"
+        placeholder="Enter first name"
+        (input)="filterEmployees()"
+      />
+    </div>
+    <div class="filter-input">
+      <label for="email">Search by Email:</label>
+      <input
+        type="text"
+        formControlName="email"
+        id="email"
+        placeholder="Enter email"
+        (input)="filterEmployees()"
+      />
+    </div>
+  </form>
+</div>
+
 <table class="table table-striped">
   <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email Id</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
+  <tr>
+    <th (click)="sortEmployees('firstName')">
+      First Name
+      <span *ngIf="sortedColumn === 'firstName'" class="sort-arrow">
+        <span *ngIf="sortOrder === 'asc'" class="up-arrow">&#9650;</span>
+        <span *ngIf="sortOrder === 'desc'" class="down-arrow">&#9660;</span>
+      </span>
+    </th>
+    <th (click)="sortEmployees('lastName')">
+      Last Name
+      <span *ngIf="sortedColumn === 'lastName'" class="sort-arrow">
+        <span *ngIf="sortOrder === 'asc'" class="up-arrow">&#9650;</span>
+        <span *ngIf="sortOrder === 'desc'" class="down-arrow">&#9660;</span>
+      </span>
+    </th>
+    <th>Email Id</th>
+    <th>Actions</th>
+  </tr>
+</thead>
   <tbody>
-    <tr *ngFor="let employee of employees">
+    <tr *ngFor="let employee of filteredEmployees">
       <td>{{ employee.firstName }}</td>
       <td>{{ employee.lastName }}</td>
       <td>{{ employee.emailId }}</td>
