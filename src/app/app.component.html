@@ -1,18 +1,24 @@
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a routerLink="employees" routerLinkActive="active" class="nav-link"
-        >Employee List</a
-      >
-    </li>
-  </ul>
-</nav>
-<h1 class="text-center">{{ title }}</h1>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
-<footer class="footer">
-  <div class="container">
-    <span>All Rights Reserved 2023</span>
-  </div>
-</footer>
+<body>
+  <header class="navbar">
+    <nav class="navbar__container">
+      <ul class="navbar__list">
+        <li class="navbar__item">
+          <a href="employees" class="navbar__link">Employee List</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h1 class="main-content__title"></h1>
+    <div class="main-content__container">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <span class="footer__text">All Rights Reserved &copy; 2023</span>
+    </div>
+  </footer>
+</body>
