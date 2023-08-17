@@ -31,16 +31,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeDTO createEmployee(EmployeeDTO employeeDTO) {
-            if (employeeDTO == null) {
-                throw new IllegalArgumentException("EmployeeDTO is null");
-            }
-            return employeeMapper.toDto(employeeRepository.saveAndFlush(employeeMapper.toEntity(employeeDTO)));
+        if (employeeDTO == null) {
+            throw new IllegalArgumentException("EmployeeDTO is null");
+        }
+        return employeeMapper.toDto(employeeRepository.saveAndFlush(employeeMapper.toEntity(employeeDTO)));
     }
 
     @Override
     public EmployeeDTO updateEmployee(Long id, EmployeeDTO employeeDTO) {
         Employee existingEmployee = employeeRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Employee not found with id: " + id));
+
         // Update the existing employee's properties based on the DTO
         // Assuming your EmployeeDTO contains fields like firstName, lastName, and emailId
         existingEmployee.setFirstName(employeeDTO.getFirstName());
